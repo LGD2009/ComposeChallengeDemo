@@ -99,7 +99,6 @@ fun DogItem(dogEntity: DogEntity) {
             }
             .padding(4.dp)
             .fillMaxWidth()) {
-            Spacer(modifier = Modifier.height(4.dp))
             Image(
                 modifier = Modifier
                     .width(100.dp)
