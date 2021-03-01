@@ -17,11 +17,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.DogEntity
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.dogsList
 import com.example.androiddevchallenge.ui.Screen
+import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
 fun HomeScreen(navigateTo: ((Screen) -> Unit)? = null) {
@@ -34,7 +36,7 @@ fun HomeScreen(navigateTo: ((Screen) -> Unit)? = null) {
                         color = Color.White
                     )
                 },
-                backgroundColor = colorResource(id =R.color.purple_700),
+                backgroundColor = colorResource(id = R.color.purple_700),
                 contentColor = Color.White,
                 elevation = 12.dp
             )
@@ -74,8 +76,11 @@ fun DogItem(dogEntity: DogEntity, navigateTo: ((Screen) -> Unit)?) {
                 contentDescription = "",
             )
             Column(modifier = Modifier.padding(4.dp)) {
-                Text(text = dogEntity.name)
-                Text(dogEntity.detail)
+                Text(text = dogEntity.name,style = typography.h5)
+                Text(
+                    dogEntity.detail, maxLines = 2,
+                    overflow = TextOverflow.Ellipsis
+                )
             }
         }
     }
