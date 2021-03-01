@@ -20,12 +20,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.Crossfade
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.NavigationViewModel
 import com.example.androiddevchallenge.ui.Screen
 import com.example.androiddevchallenge.ui.page.DetailScreen
@@ -47,10 +45,10 @@ class MainActivity : AppCompatActivity() {
 
 // Start building your app here!
 @Composable
-fun MyApp(viewModel: NavigationViewModel?=null) {
-    if (viewModel==null){
+fun MyApp(viewModel: NavigationViewModel? = null) {
+    if (viewModel == null) {
         HomeScreen()
-    }else{
+    } else {
         Crossfade(viewModel.currentScreen) { screen ->
             Surface(color = MaterialTheme.colors.background) {
                 when (screen) {
