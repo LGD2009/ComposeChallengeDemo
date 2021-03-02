@@ -25,7 +25,6 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-
 enum class ScreenName { HOME, DETAIL }
 
 sealed class Screen(val id: ScreenName) {

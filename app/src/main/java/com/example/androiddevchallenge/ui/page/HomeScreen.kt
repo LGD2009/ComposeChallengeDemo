@@ -18,12 +18,12 @@ package com.example.androiddevchallenge.ui.page
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -70,7 +70,6 @@ fun HomeScreen(navigateTo: ((Screen) -> Unit)? = null) {
                     }
                 }
             }
-
         }
     )
 }
@@ -78,13 +77,16 @@ fun HomeScreen(navigateTo: ((Screen) -> Unit)? = null) {
 @Composable
 fun DogItem(dogEntity: DogEntity, navigateTo: ((Screen) -> Unit)?) {
     Card {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier
-            .clickable {
-                if (navigateTo != null)
-                    navigateTo(Screen.Detail(dogEntity.id))
-            }
-            .padding(4.dp)
-            .fillMaxWidth()) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .clickable {
+                    if (navigateTo != null)
+                        navigateTo(Screen.Detail(dogEntity.id))
+                }
+                .padding(4.dp)
+                .fillMaxWidth()
+        ) {
             Image(
                 modifier = Modifier
                     .width(100.dp)
@@ -97,7 +99,7 @@ fun DogItem(dogEntity: DogEntity, navigateTo: ((Screen) -> Unit)?) {
                 contentDescription = "",
             )
             Column(modifier = Modifier.padding(4.dp)) {
-                Text(text = dogEntity.name,style = typography.h5)
+                Text(text = dogEntity.name, style = typography.h5)
                 Text(
                     dogEntity.detail, maxLines = 2,
                     overflow = TextOverflow.Ellipsis

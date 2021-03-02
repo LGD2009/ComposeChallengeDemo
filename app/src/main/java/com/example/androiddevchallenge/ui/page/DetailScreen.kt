@@ -20,11 +20,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
-import androidx.compose.material.IconButton
-import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
@@ -70,11 +70,13 @@ fun DetailScreen(
         },
         content = {
             Column() {
-                Image(modifier = Modifier.height(180.dp).fillMaxWidth(),painter = painterResource(id = dogEntity.drawableRes),
-                    contentScale = ContentScale.Crop, contentDescription ="")
+                Image(
+                    modifier = Modifier.height(180.dp).fillMaxWidth(), painter = painterResource(id = dogEntity.drawableRes),
+                    contentScale = ContentScale.Crop, contentDescription = ""
+                )
                 Spacer(modifier = Modifier.height(16.dp))
-                Text(text = dogEntity.name,style = typography.h6)
-                Text(text = dogEntity.detail,style = typography.body2)
+                Text(text = dogEntity.name, style = typography.h6)
+                Text(text = dogEntity.detail, style = typography.body2)
             }
         }
     )

@@ -63,9 +63,7 @@ fun MyApp(viewModel: NavigationViewModel? = null) {
             }
         }
     }
-
 }
-
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
