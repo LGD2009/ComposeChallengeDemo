@@ -15,8 +15,6 @@
  */
 package com.example.androiddevchallenge
 
-import org.junit.Test
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -24,13 +22,4 @@ import org.junit.Test
  */
 class ExampleUnitTest {
     // Add unit tests here
-
-    @Test
-    fun test(){
-        val dogId = "b"
-        val dogEntity = dogsList.first {
-            it.id == dogId
-        }
-        println(dogEntity.name)
-    }
 }
